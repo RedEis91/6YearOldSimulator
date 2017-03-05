@@ -1,0 +1,22 @@
+.big {
+    font-size: 30px;
+    
+}
+
+.small {
+    font-size: 10px;
+}
+
+.underlined {
+    text-decoration: underline;
+}
+
+.red {
+    color: red;
+}
+
+.thick {
+    font-size: 18px;
+    font-weight: bold;
+    
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body ng-app="myCoolModule">
+    <div ng-controller="myController">
+        <h1>Good Ol Calvin Simulator</h1>
+        <!-- button runs AddWord() function on the event ng-click -->
+        <button ng-click="addWord()">Word!</button>
+        <ul>
+            <li ng-repeat="word in deployArray track by $index">
+                <!--  Track by index solves the issue of angular not repeating values, without it, when it gets to a repeated value in our array, it stops working            -->
+                {{word}} <!-- expression displays word -->
+            </li>
+            <!--creates new list item from a "word" selected by $index in our deployClassArray and added class based on the style property of this object, to be displayed by name of "word" -->
+            <li ng-repeat="word in deployClassArray track by $index" ng-class="word.style">{{word.name}}</li>
+            
+            <li ng-repeat="phrase in deployPhraseArray track by $index">
+                <!--  Track by index solves the issue of angular not repeating values, without it, when it gets to a repeated value in our array, it stops working            -->
+                {{phrase}} <!-- expression displays word -->
+            </li>
+            
+            <li ng-repeat="phrase in deployPhraseClassArray track by $index" ng-class="phrase.style">
+                <!--  Track by index solves the issue of angular not repeating values, without it, when it gets to a repeated value in our array, it stops working            -->
+                {{phrase.name}} <!-- expression displays word -->
+            </li>
+        </ul>
+        <!-- button runs wordsWithClass() function on the event ng-click -->
+        <button ng-click="addPhrase()">Phrase!</button>
+        <button ng-click="phrasesWithClass()">Phrase with Style!</button>
+        <button ng-click="wordsWithClass()">Word with Style!</button>
+    </div>
+</body>
+
+</html>
